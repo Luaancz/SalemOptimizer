@@ -29,7 +29,7 @@ namespace SalemOptimizer
             var organisms = new List<Organism>();
             var generations = 0;
 
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 50; i++)
             {
                 Organism organism = new Organism(this, problem);
                 organisms.Add(organism);
@@ -43,7 +43,7 @@ namespace SalemOptimizer
 
             var newBest = false;
 
-            while (generations < 4000)
+            while (generations < 2000)
             {
                 if (cancellationToken.IsCancellationRequested) break;
 
