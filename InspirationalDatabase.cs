@@ -28,10 +28,10 @@ namespace SalemOptimizer
                                 Proficiencies =
                                     cols
                                         .Select((val, idx) => new { Index = idx, Value = val })
-                                        .Where(i => i.Index >= 1 && i.Index <= 15 && !string.IsNullOrWhiteSpace(i.Value))
-                                        .ToDictionary(i => (ProficiencyKind)(i.Index - 1), i => int.Parse(i.Value)),
-                                Uses = int.Parse(cols[17]),
-                                Weight = double.Parse(cols[18], CultureInfo.InvariantCulture)
+                                        .Where(i => i.Index >= 2 && i.Index <= 16 && !string.IsNullOrWhiteSpace(i.Value))
+                                        .ToDictionary(i => (ProficiencyKind)(i.Index - 2), i => int.Parse(i.Value)),
+                                Uses = int.Parse(cols[18]),
+                                Weight = string.IsNullOrWhiteSpace(cols[1]) ? 1d : double.Parse(cols[1], CultureInfo.InvariantCulture)
                             }
                     )
                     .Where(i => i.Proficiencies.Count > 0)
