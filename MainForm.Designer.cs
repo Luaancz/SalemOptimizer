@@ -635,6 +635,7 @@
             this.btnResetAll.TabIndex = 15;
             this.btnResetAll.Text = "Reset all";
             this.btnResetAll.UseVisualStyleBackColor = true;
+            this.btnResetAll.Click += new System.EventHandler(this.btnResetAll_Click);
             // 
             // nudArtsAndCrafts
             // 
@@ -744,14 +745,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = global::SalemOptimizer.Properties.Settings.Default.MainFormClientSize;
+            this.ClientSize = new System.Drawing.Size(664, 462);
             this.Controls.Add(this.grpSolution);
             this.Controls.Add(this.grpDesiredProficiencies);
             this.Controls.Add(this.lblInspirationals);
             this.Controls.Add(this.lvInspirationals);
-            this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::SalemOptimizer.Properties.Settings.Default, "MainFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::SalemOptimizer.Properties.Settings.Default, "MainFormClientSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.Location = global::SalemOptimizer.Properties.Settings.Default.MainFormLocation;
             this.MinimumSize = new System.Drawing.Size(350, 501);
             this.Name = "MainForm";
             this.Text = "Salem Optimizer";

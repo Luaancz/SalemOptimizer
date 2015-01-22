@@ -120,9 +120,11 @@ namespace SalemOptimizer
 
             lvInspirationals.ListViewItemSorter = new ListViewColumnSorter();
             lvSolutions.ListViewItemSorter = new ListViewColumnSorter();
+
+            ClientSize = Settings.Default.MainFormClientSize;
         }
 
-        private CancellationTokenSource cancellationTokenSource;      
+        private CancellationTokenSource cancellationTokenSource;
 
         private async void btnFindSolution_Click(object sender, EventArgs e)
         {
@@ -198,6 +200,7 @@ namespace SalemOptimizer
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Settings.Default.AvailableInspirationals = string.Join(",", lvInspirationals.CheckedItems.OfType<ListViewItem>().Select(i => i.Text));
+            Settings.Default.MainFormClientSize = ClientSize;
 
             Settings.Default.Save();
         }
@@ -234,6 +237,25 @@ namespace SalemOptimizer
             }
 
             lv.Sort();
+        }
+
+        private void btnResetAll_Click(object sender, EventArgs e)
+        {
+            nudArtsAndCrafts.Value = 0;
+            nudCloakAndDagger.Value = 0;
+            nudFaithAndWisdom.Value = 0;
+            nudFloraAndFauna.Value = 0;
+            nudHammerAndNail.Value = 0;
+            nudHerbsAndSprouts.Value = 0;
+            nudHuntingAndHideworking.Value = 0;
+            nudLawAndLore.Value = 0;
+            nudMinesAndMountains.Value = 0;
+            nudNaturalPhilosophy.Value = 0;
+            nudPerenialPhilosophy.Value = 0;
+            nudSparksAndEmbers.Value = 0;
+            nudStocksAndCultivars.Value = 0;
+            nudSugarAndSpice.Value = 0;
+            nudThreadAndNeedle.Value = 0;
         }
     }
 }
