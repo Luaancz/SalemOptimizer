@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnFindSolution = new System.Windows.Forms.Button();
             this.lvInspirationals = new System.Windows.Forms.ListView();
             this.chName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chTotalCost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblInspirationals = new System.Windows.Forms.Label();
             this.grpDesiredProficiencies = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpProficiencies = new System.Windows.Forms.TableLayoutPanel();
             this.nudPerenialPhilosophy = new System.Windows.Forms.NumericUpDown();
             this.nudNaturalPhilosophy = new System.Windows.Forms.NumericUpDown();
             this.nudThreadAndNeedle = new System.Windows.Forms.NumericUpDown();
@@ -71,8 +72,9 @@
             this.lvSolutions = new System.Windows.Forms.ListView();
             this.chOrganism = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chCost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.toolTipError = new System.Windows.Forms.ToolTip(this.components);
             this.grpDesiredProficiencies.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tlpProficiencies.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPerenialPhilosophy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudNaturalPhilosophy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudThreadAndNeedle)).BeginInit();
@@ -145,7 +147,7 @@
             // 
             this.grpDesiredProficiencies.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpDesiredProficiencies.Controls.Add(this.tableLayoutPanel1);
+            this.grpDesiredProficiencies.Controls.Add(this.tlpProficiencies);
             this.grpDesiredProficiencies.Location = new System.Drawing.Point(417, 12);
             this.grpDesiredProficiencies.Name = "grpDesiredProficiencies";
             this.grpDesiredProficiencies.Size = new System.Drawing.Size(235, 438);
@@ -153,64 +155,64 @@
             this.grpDesiredProficiencies.TabStop = false;
             this.grpDesiredProficiencies.Text = "Desired proficiencies";
             // 
-            // tableLayoutPanel1
+            // tlpProficiencies
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.nudPerenialPhilosophy, 1, 14);
-            this.tableLayoutPanel1.Controls.Add(this.nudNaturalPhilosophy, 1, 13);
-            this.tableLayoutPanel1.Controls.Add(this.nudThreadAndNeedle, 1, 12);
-            this.tableLayoutPanel1.Controls.Add(this.nudSugarAndSpice, 1, 11);
-            this.tableLayoutPanel1.Controls.Add(this.nudStocksAndCultivars, 1, 10);
-            this.tableLayoutPanel1.Controls.Add(this.nudSparksAndEmbers, 1, 9);
-            this.tableLayoutPanel1.Controls.Add(this.nudHerbsAndSprouts, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.nudMinesAndMountains, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.nudLawAndLore, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.nudHuntingAndHideworking, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.nudHammerAndNail, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.nudFloraAndFauna, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.nudCloakAndDagger, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblArtsAndCrafts, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblCloakAndDagger, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblFloraAndFauna, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lblHammerAndNail, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.lblHuntingAndHideworking, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.lblLawAndLore, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.lblMinesAndMountains, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.lblHerbsAndSprouts, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.lblSparksAndEmbers, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.lblStocksAndCultivars, 0, 10);
-            this.tableLayoutPanel1.Controls.Add(this.lblSugarAndSpice, 0, 11);
-            this.tableLayoutPanel1.Controls.Add(this.lblThreadAndNeedle, 0, 12);
-            this.tableLayoutPanel1.Controls.Add(this.lblNaturalPhilosophy, 0, 13);
-            this.tableLayoutPanel1.Controls.Add(this.lblPerenialPhilosophy, 0, 14);
-            this.tableLayoutPanel1.Controls.Add(this.btnResetAll, 1, 15);
-            this.tableLayoutPanel1.Controls.Add(this.nudArtsAndCrafts, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblFaithAndWisdom, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.nudFaithAndWisdom, 1, 2);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 16;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(229, 419);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tlpProficiencies.ColumnCount = 2;
+            this.tlpProficiencies.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
+            this.tlpProficiencies.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpProficiencies.Controls.Add(this.nudPerenialPhilosophy, 1, 14);
+            this.tlpProficiencies.Controls.Add(this.nudNaturalPhilosophy, 1, 13);
+            this.tlpProficiencies.Controls.Add(this.nudThreadAndNeedle, 1, 12);
+            this.tlpProficiencies.Controls.Add(this.nudSugarAndSpice, 1, 11);
+            this.tlpProficiencies.Controls.Add(this.nudStocksAndCultivars, 1, 10);
+            this.tlpProficiencies.Controls.Add(this.nudSparksAndEmbers, 1, 9);
+            this.tlpProficiencies.Controls.Add(this.nudHerbsAndSprouts, 1, 8);
+            this.tlpProficiencies.Controls.Add(this.nudMinesAndMountains, 1, 7);
+            this.tlpProficiencies.Controls.Add(this.nudLawAndLore, 1, 6);
+            this.tlpProficiencies.Controls.Add(this.nudHuntingAndHideworking, 1, 5);
+            this.tlpProficiencies.Controls.Add(this.nudHammerAndNail, 1, 4);
+            this.tlpProficiencies.Controls.Add(this.nudFloraAndFauna, 1, 3);
+            this.tlpProficiencies.Controls.Add(this.nudCloakAndDagger, 1, 1);
+            this.tlpProficiencies.Controls.Add(this.lblArtsAndCrafts, 0, 0);
+            this.tlpProficiencies.Controls.Add(this.lblCloakAndDagger, 0, 1);
+            this.tlpProficiencies.Controls.Add(this.lblFloraAndFauna, 0, 3);
+            this.tlpProficiencies.Controls.Add(this.lblHammerAndNail, 0, 4);
+            this.tlpProficiencies.Controls.Add(this.lblHuntingAndHideworking, 0, 5);
+            this.tlpProficiencies.Controls.Add(this.lblLawAndLore, 0, 6);
+            this.tlpProficiencies.Controls.Add(this.lblMinesAndMountains, 0, 7);
+            this.tlpProficiencies.Controls.Add(this.lblHerbsAndSprouts, 0, 8);
+            this.tlpProficiencies.Controls.Add(this.lblSparksAndEmbers, 0, 9);
+            this.tlpProficiencies.Controls.Add(this.lblStocksAndCultivars, 0, 10);
+            this.tlpProficiencies.Controls.Add(this.lblSugarAndSpice, 0, 11);
+            this.tlpProficiencies.Controls.Add(this.lblThreadAndNeedle, 0, 12);
+            this.tlpProficiencies.Controls.Add(this.lblNaturalPhilosophy, 0, 13);
+            this.tlpProficiencies.Controls.Add(this.lblPerenialPhilosophy, 0, 14);
+            this.tlpProficiencies.Controls.Add(this.btnResetAll, 1, 15);
+            this.tlpProficiencies.Controls.Add(this.nudArtsAndCrafts, 1, 0);
+            this.tlpProficiencies.Controls.Add(this.lblFaithAndWisdom, 0, 2);
+            this.tlpProficiencies.Controls.Add(this.nudFaithAndWisdom, 1, 2);
+            this.tlpProficiencies.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpProficiencies.Location = new System.Drawing.Point(3, 16);
+            this.tlpProficiencies.Name = "tlpProficiencies";
+            this.tlpProficiencies.RowCount = 16;
+            this.tlpProficiencies.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tlpProficiencies.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tlpProficiencies.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tlpProficiencies.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tlpProficiencies.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tlpProficiencies.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tlpProficiencies.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tlpProficiencies.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tlpProficiencies.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tlpProficiencies.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tlpProficiencies.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tlpProficiencies.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tlpProficiencies.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tlpProficiencies.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tlpProficiencies.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tlpProficiencies.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpProficiencies.Size = new System.Drawing.Size(229, 419);
+            this.tlpProficiencies.TabIndex = 0;
             // 
             // nudPerenialPhilosophy
             // 
@@ -741,6 +743,14 @@
             this.chCost.Text = "Cost";
             this.chCost.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // toolTipError
+            // 
+            this.toolTipError.AutomaticDelay = 100;
+            this.toolTipError.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.toolTipError.ForeColor = System.Drawing.Color.Black;
+            this.toolTipError.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Error;
+            this.toolTipError.ToolTipTitle = "Error";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -756,8 +766,8 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.grpDesiredProficiencies.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.tlpProficiencies.ResumeLayout(false);
+            this.tlpProficiencies.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPerenialPhilosophy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudNaturalPhilosophy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudThreadAndNeedle)).EndInit();
@@ -785,7 +795,7 @@
         private System.Windows.Forms.ListView lvInspirationals;
         private System.Windows.Forms.Label lblInspirationals;
         private System.Windows.Forms.GroupBox grpDesiredProficiencies;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tlpProficiencies;
         private System.Windows.Forms.Label lblArtsAndCrafts;
         private System.Windows.Forms.Label lblCloakAndDagger;
         private System.Windows.Forms.Label lblFaithAndWisdom;
@@ -824,6 +834,7 @@
         private System.Windows.Forms.ListView lvSolutions;
         private System.Windows.Forms.ColumnHeader chCost;
         private System.Windows.Forms.ColumnHeader chOrganism;
+        private System.Windows.Forms.ToolTip toolTipError;
     }
 }
 
