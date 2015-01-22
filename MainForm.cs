@@ -128,7 +128,7 @@ namespace SalemOptimizer
 
         private async void btnFindSolution_Click(object sender, EventArgs e)
         {
-            if (lvInspirationals.SelectedItems.Count == 0)
+            if (lvInspirationals.CheckedItems.Count == 0)
             {
                 toolTipError.Show("You have to select at least one available inspirational.", lblInspirationals, 1000);
 
