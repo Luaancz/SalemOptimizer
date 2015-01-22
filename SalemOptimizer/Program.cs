@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SalemOptimizer.Properties;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,6 +15,9 @@ namespace SalemOptimizer
         [STAThread]
         static void Main()
         {
+            Settings.Default.Upgrade();
+            Settings.Default.Save();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());

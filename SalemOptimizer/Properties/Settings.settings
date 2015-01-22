@@ -47,7 +47,7 @@
     <Setting Name="PerenialPhilosophy" Roaming="true" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="AvailableInspirationals" Type="System.String" Scope="User">
+    <Setting Name="AvailableInspirationals" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="MainFormLocation" Type="System.Drawing.Point" Scope="User">
