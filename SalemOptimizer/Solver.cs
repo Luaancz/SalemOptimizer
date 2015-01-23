@@ -12,12 +12,14 @@ namespace SalemOptimizer
         private readonly Problem problem;
         private readonly Inspirational[] availableInspirationals;
         private readonly CancellationToken cancellationToken;
+        private readonly Organism[] includedOrganisms;
 
-        public Solver(Problem problem, Inspirational[] availableInspirationals, CancellationToken cancellationToken)
+        public Solver(Problem problem, Inspirational[] availableInspirationals, CancellationToken cancellationToken, Organism[] includedOrganisms)
         {
             this.problem = problem;
             this.availableInspirationals = availableInspirationals;
             this.cancellationToken = cancellationToken;
+            this.includedOrganisms = includedOrganisms;
         }
 
         public Inspirational[] AvailableInspirationals { get { return availableInspirationals; } }
@@ -35,6 +37,8 @@ namespace SalemOptimizer
                 organisms.Add(organism);
                 leaderboard.AddOrganism(organism);
             }
+
+            if (includedOrganisms != null) organisms.AddRange(includedOrganisms.Select(i => i.Clone()));
 
             var best = default(Organism);
             var worst = default(Organism);

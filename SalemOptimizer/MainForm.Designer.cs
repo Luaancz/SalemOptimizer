@@ -73,6 +73,7 @@
             this.chOrganism = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chCost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolTipError = new System.Windows.Forms.ToolTip(this.components);
+            this.btnRetryWithBest = new System.Windows.Forms.Button();
             this.grpDesiredProficiencies.SuspendLayout();
             this.tlpProficiencies.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPerenialPhilosophy)).BeginInit();
@@ -706,6 +707,7 @@
             // 
             this.grpSolution.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpSolution.Controls.Add(this.btnRetryWithBest);
             this.grpSolution.Controls.Add(this.lvSolutions);
             this.grpSolution.Controls.Add(this.btnFindSolution);
             this.grpSolution.Controls.Add(this.btnStop);
@@ -750,6 +752,17 @@
             this.toolTipError.ForeColor = System.Drawing.Color.Black;
             this.toolTipError.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Error;
             this.toolTipError.ToolTipTitle = "Error";
+            // 
+            // btnRetryWithBest
+            // 
+            this.btnRetryWithBest.Enabled = false;
+            this.btnRetryWithBest.Location = new System.Drawing.Point(133, 19);
+            this.btnRetryWithBest.Name = "btnRetryWithBest";
+            this.btnRetryWithBest.Size = new System.Drawing.Size(87, 23);
+            this.btnRetryWithBest.TabIndex = 7;
+            this.btnRetryWithBest.Text = "Retry with best";
+            this.btnRetryWithBest.UseVisualStyleBackColor = true;
+            this.btnRetryWithBest.Click += new System.EventHandler(this.btnRetryWithBest_Click);
             // 
             // MainForm
             // 
@@ -835,6 +848,7 @@
         private System.Windows.Forms.ColumnHeader chCost;
         private System.Windows.Forms.ColumnHeader chOrganism;
         private System.Windows.Forms.ToolTip toolTipError;
+        private System.Windows.Forms.Button btnRetryWithBest;
     }
 }
 

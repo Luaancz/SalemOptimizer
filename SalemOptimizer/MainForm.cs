@@ -135,49 +135,59 @@ namespace SalemOptimizer
                 return;
             }
 
+            await FindSolution(false);
+        }
+
+        Organism[] bestOrganisms;
+
+        private async Task FindSolution(bool useLastBest)
+        {
             try
             {
                 btnFindSolution.Enabled = false;
+                btnRetryWithBest.Enabled = false;
                 btnStop.Enabled = true;
 
                 UseWaitCursor = true;
 
                 var problem =
                     new Problem()
-                    .Add(ProficiencyKind.ArtsAndCrafts,         nudArtsAndCrafts.Value)
-                    .Add(ProficiencyKind.CloakAndDagger,        nudCloakAndDagger.Value)
-                    .Add(ProficiencyKind.FaithAndWisdom,        nudFaithAndWisdom.Value)
-                    .Add(ProficiencyKind.FloraAndFauna,         nudFloraAndFauna.Value)
-                    .Add(ProficiencyKind.HammerAndNail,         nudHammerAndNail.Value)
-                    .Add(ProficiencyKind.HerbsAndSprouts,       nudHerbsAndSprouts.Value)
+                    .Add(ProficiencyKind.ArtsAndCrafts, nudArtsAndCrafts.Value)
+                    .Add(ProficiencyKind.CloakAndDagger, nudCloakAndDagger.Value)
+                    .Add(ProficiencyKind.FaithAndWisdom, nudFaithAndWisdom.Value)
+                    .Add(ProficiencyKind.FloraAndFauna, nudFloraAndFauna.Value)
+                    .Add(ProficiencyKind.HammerAndNail, nudHammerAndNail.Value)
+                    .Add(ProficiencyKind.HerbsAndSprouts, nudHerbsAndSprouts.Value)
                     .Add(ProficiencyKind.HuntingAndHideworking, nudHuntingAndHideworking.Value)
-                    .Add(ProficiencyKind.LawAndLore,            nudLawAndLore.Value)
-                    .Add(ProficiencyKind.MinesAndMountains,     nudMinesAndMountains.Value)
-                    .Add(ProficiencyKind.NaturalPhilosophy,     nudNaturalPhilosophy.Value)
-                    .Add(ProficiencyKind.PerenialPhilosophy,    nudPerenialPhilosophy.Value)
-                    .Add(ProficiencyKind.SparksAndEmbers,       nudSparksAndEmbers.Value)
-                    .Add(ProficiencyKind.StocksAndCultivars,    nudStocksAndCultivars.Value)
-                    .Add(ProficiencyKind.SugarAndSpice,         nudSugarAndSpice.Value)
-                    .Add(ProficiencyKind.ThreadAndNeedle,       nudThreadAndNeedle.Value);
+                    .Add(ProficiencyKind.LawAndLore, nudLawAndLore.Value)
+                    .Add(ProficiencyKind.MinesAndMountains, nudMinesAndMountains.Value)
+                    .Add(ProficiencyKind.NaturalPhilosophy, nudNaturalPhilosophy.Value)
+                    .Add(ProficiencyKind.PerenialPhilosophy, nudPerenialPhilosophy.Value)
+                    .Add(ProficiencyKind.SparksAndEmbers, nudSparksAndEmbers.Value)
+                    .Add(ProficiencyKind.StocksAndCultivars, nudStocksAndCultivars.Value)
+                    .Add(ProficiencyKind.SugarAndSpice, nudSugarAndSpice.Value)
+                    .Add(ProficiencyKind.ThreadAndNeedle, nudThreadAndNeedle.Value);
 
                 var availableInspirationals = lvInspirationals.CheckedItems.OfType<ListViewItem>().Select(i => ((Inspirational)i.Tag).Clone()).ToArray();
 
                 cancellationTokenSource = new CancellationTokenSource();
 
-                var solvers = Enumerable.Range(1, 4).Select(i => Task.Run(() => new Solver(problem, availableInspirationals, cancellationTokenSource.Token).Solve())).ToArray();
+                var solvers = Enumerable.Range(1, 4).Select(i => Task.Run(() => new Solver(problem, availableInspirationals, cancellationTokenSource.Token, useLastBest ? bestOrganisms : null).Solve())).ToArray();
 
                 var best = await Task.WhenAll(solvers);
 
                 // Aggregate the best results and fill them into the results control
-                var bestOfAll = 
+                var bestOfAll =
                     best
                     .SelectMany(i => i)
-                    .Select(i => new { Name = i.ToString(), Solution = i.Solution })
+                    .Select(i => new { Name = i.ToString(), Organism = i, Solution = i.Solution })
                     .GroupBy(i => i.Name)
                     .Select(i => i.First())
                     .OrderBy(i => i.Solution.CostTotal)
                     .Take(5)
                     .ToArray();
+
+                bestOrganisms = bestOfAll.Select(i => i.Organism.Clone()).ToArray();
 
                 lvSolutions.Items.Clear();
 
@@ -193,6 +203,7 @@ namespace SalemOptimizer
             finally
             {
                 btnFindSolution.Enabled = true;
+                btnRetryWithBest.Enabled = bestOrganisms != null;
                 btnStop.Enabled = false;
 
                 UseWaitCursor = false;
@@ -263,6 +274,18 @@ namespace SalemOptimizer
             nudStocksAndCultivars.Value = 0;
             nudSugarAndSpice.Value = 0;
             nudThreadAndNeedle.Value = 0;
+        }
+
+        private async void btnRetryWithBest_Click(object sender, EventArgs e)
+        {
+            if (lvInspirationals.CheckedItems.Count == 0)
+            {
+                toolTipError.Show("You have to select at least one available inspirational.", lblInspirationals, 1000);
+
+                return;
+            }
+
+            await FindSolution(true);
         }
     }
 }
