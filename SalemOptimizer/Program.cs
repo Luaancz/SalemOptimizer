@@ -15,8 +15,11 @@ namespace SalemOptimizer
         [STAThread]
         static void Main()
         {
-            Settings.Default.Upgrade();
-            Settings.Default.Save();
+            if (string.IsNullOrEmpty(Settings.Default.AvailableInspirationals))
+            {
+                Settings.Default.Upgrade();
+                Settings.Default.Save();
+            }
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
