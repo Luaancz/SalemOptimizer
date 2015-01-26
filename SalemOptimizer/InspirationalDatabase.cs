@@ -21,9 +21,10 @@ namespace SalemOptimizer
                     .Select(row => row.Split('\t'))
                     .Select
                     (
-                        cols =>
+                        (cols, index) =>
                             new Inspirational
                             {
+                                Id = index,
                                 Name = cols[0],
                                 Proficiencies =
                                     cols

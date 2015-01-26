@@ -2,7 +2,7 @@
 A Taste of Autumn			300		575		875	245	620	435					520		3570	2
 A Taste of The New World					450			260	400	360	500		230				2200	3
 Abandoned Cobweb		450			550		450	350						900	725		3425	1
-Acorn Indian		250		550	800	450	700		450				800				4000	1
+Acorn Indian	2	250		550	800	450	700		450				800				4000	1
 Aged Driftwood		1200			600	900			500		600	700			250		4750	1
 Animal Canine			2500			2500		4250									9250	7
 Argopelter Beak			1800					3200								1200	6200	1
@@ -51,7 +51,7 @@ Decorative Woodcarving		620		240		1280		350				500	500				3490	2
 Deer Antlers		450				850		2100	575						1750		5725	1
 Deer Hoof			675		1400	850		2250	620						1750		7545	1
 Dehydrated Rose				150									1500			1500	3150	1
-Devil's Wort			150	250			750								1125	45	2320	1
+Devil's Wort	1		150	250			750								1125	45	2320	1
 Dried Long Ear			250		950		970	750						800	200		3920	1
 Earthworm Python			750		780							1200		900	850		4480	1
 Eloped Gingerbread Man			850				1250				1300	950	2350				6700	3
@@ -62,7 +62,7 @@ Fine Beaver Teeth			550				1075	1550	900					800	500		5375	2
 Fish Skeleton			35	75	250					125		90				10	585	1
 Fishing Trophy		1250			1000		1850	1000					1700		1000		7800	6
 Five Nations' Dreamcatcher		1600		1250					1800			1000		1500		750	7900	1
-Flame Azalea							795				1300	180	230	290			2795	1
+Flame Azalea	1						795				1300	180	230	290			2795	1
 Flower Arrangement		1245					2575					1475	1620		885		7800	3
 Foetid Ooze			2150					4500					2000	2800	2050		13500	1
 Four-leaf Clover				2850			2230									1420	6500	13
@@ -165,7 +165,7 @@ The Wicked Wicker Man		2266	1200	2000							1250	2000				1400	10116	1
 Tiny Pocketwatch		1500		900					1350	1750						1750	7250	1
 Torn Tentacle			4250								2500				2500		9250	7
 Traces of the Lost Colony				3000	1500	2000		1500	2500								10500	1
-Trout Lily				290	225	275	715	1425									2930	1
+Trout Lily	1			290	225	275	715	1425									2930	1
 Tumbleweed			550	1440	1750							1350			850		5940	1
 Turkey Liver					3250				1350				2150				6750	3
 Turks Cap					380	1250	775	410									2815	1
@@ -178,7 +178,7 @@ Wee Menagerie			350	1050	1300			1300							900		4900	3
 Weighty Wattle							2000					750	1000		1500	500	5750	1
 Whispering Snake Skull			5000													2000	7000	1
 Wicker Man		775		850							800	750				75	3250	1
-Wild Columbine		260		210	230		635						1000				2335	1
+Wild Columbine	2	260		210	230		635						1000				2335	1
 Wild Garlic	2	200			550						400	390	450		200		2190	1
 Wild Oats					1500							1500	750				3750	1
 Windborne Kite		1250		1550					1550					1700	550		6600	5

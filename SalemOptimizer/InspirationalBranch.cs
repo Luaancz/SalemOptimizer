@@ -79,10 +79,7 @@ namespace SalemOptimizer
 
             foreach (var node in nodes)
             {
-                foreach (var prof in node.Inspirational.Proficiencies)
-                {
-                    engine.AddProficiency(prof.Key, prof.Value, node.Inspirational.Weight);
-                }
+                engine.AddInspirational(node.Inspirational);
             }
         }
 
