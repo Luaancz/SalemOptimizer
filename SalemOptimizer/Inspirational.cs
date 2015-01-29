@@ -25,6 +25,7 @@ namespace SalemOptimizer
         {
             var clone = new Inspirational();
 
+            clone.Id = Id;
             clone.Name = Name;
             clone.Weight = Weight;
 
