@@ -8,26 +8,37 @@ namespace SalemOptimizer
 {
     public class Leaderboard
     {
-        private int slots = 5;
+        private readonly int slots;
+        private readonly bool prune;
         private Organism[] organisms;
 
         private double worst = double.MaxValue;
 
-        public Leaderboard(int slots)
+        public Leaderboard(int slots, bool prune)
         {
             this.slots = slots;
-            this.organisms = new Organism[slots];
+            this.prune = prune;
+            this.organisms = new Organism[0];
         }
 
         public void AddOrganism(Organism organism)
         {
-            if (organism.Solution.CostTotal < worst)
+            if (organism.Solution.CostTotal < worst || organisms.Length < slots)
             {
-                organisms = 
+                var tmp =
                     organisms
-                    .Union(new [] { organism.Clone() })
+                    .Union(new[] { organism.Clone() })
                     .GroupBy(i => i == null ? null : i.ToString())
-                    .Select(i => i.First())
+                    .Select(i => i.First());
+
+                if (prune)
+                {
+                    var tmp2 = tmp.ToArray();
+                    tmp = tmp.Where(j => !tmp2.Any(i => i.Solution.CostTotal < j.Solution.CostTotal && j.IsSupersetOf(i)));
+                }
+
+                organisms =
+                    tmp
                     .OrderBy(i => i == null ? double.MaxValue : i.Solution.CostTotal)
                     .Take(slots)
                     .ToArray();

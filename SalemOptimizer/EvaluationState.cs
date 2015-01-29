@@ -32,5 +32,18 @@ namespace SalemOptimizer
         }
 
         public int Inspiration { get; set; }
+
+        public bool IsSupersetOf(EvaluationState state)
+        {
+            bool anyBigger = false;
+
+            for (var i = 0; i < inspirationalUses.Length; i++)
+            {
+                if (inspirationalUses[i] < state.inspirationalUses[i]) return false;
+                if (inspirationalUses[i] > state.inspirationalUses[i]) anyBigger = true;
+            }
+
+            return anyBigger;
+        }
     }
 }

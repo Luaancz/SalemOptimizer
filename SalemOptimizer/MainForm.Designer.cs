@@ -69,11 +69,12 @@
             this.nudFaithAndWisdom = new System.Windows.Forms.NumericUpDown();
             this.btnStop = new System.Windows.Forms.Button();
             this.grpSolution = new System.Windows.Forms.GroupBox();
+            this.btnRetryWithBest = new System.Windows.Forms.Button();
             this.lvSolutions = new System.Windows.Forms.ListView();
             this.chOrganism = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chCost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolTipError = new System.Windows.Forms.ToolTip(this.components);
-            this.btnRetryWithBest = new System.Windows.Forms.Button();
+            this.cbxPrune = new System.Windows.Forms.CheckBox();
             this.grpDesiredProficiencies.SuspendLayout();
             this.tlpProficiencies.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPerenialPhilosophy)).BeginInit();
@@ -707,6 +708,7 @@
             // 
             this.grpSolution.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpSolution.Controls.Add(this.cbxPrune);
             this.grpSolution.Controls.Add(this.btnRetryWithBest);
             this.grpSolution.Controls.Add(this.lvSolutions);
             this.grpSolution.Controls.Add(this.btnFindSolution);
@@ -717,6 +719,17 @@
             this.grpSolution.TabIndex = 6;
             this.grpSolution.TabStop = false;
             this.grpSolution.Text = "Solution";
+            // 
+            // btnRetryWithBest
+            // 
+            this.btnRetryWithBest.Enabled = false;
+            this.btnRetryWithBest.Location = new System.Drawing.Point(133, 19);
+            this.btnRetryWithBest.Name = "btnRetryWithBest";
+            this.btnRetryWithBest.Size = new System.Drawing.Size(87, 23);
+            this.btnRetryWithBest.TabIndex = 7;
+            this.btnRetryWithBest.Text = "Retry with best";
+            this.btnRetryWithBest.UseVisualStyleBackColor = true;
+            this.btnRetryWithBest.Click += new System.EventHandler(this.btnRetryWithBest_Click);
             // 
             // lvSolutions
             // 
@@ -753,16 +766,15 @@
             this.toolTipError.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Error;
             this.toolTipError.ToolTipTitle = "Error";
             // 
-            // btnRetryWithBest
+            // cbxPrune
             // 
-            this.btnRetryWithBest.Enabled = false;
-            this.btnRetryWithBest.Location = new System.Drawing.Point(133, 19);
-            this.btnRetryWithBest.Name = "btnRetryWithBest";
-            this.btnRetryWithBest.Size = new System.Drawing.Size(87, 23);
-            this.btnRetryWithBest.TabIndex = 7;
-            this.btnRetryWithBest.Text = "Retry with best";
-            this.btnRetryWithBest.UseVisualStyleBackColor = true;
-            this.btnRetryWithBest.Click += new System.EventHandler(this.btnRetryWithBest_Click);
+            this.cbxPrune.AutoSize = true;
+            this.cbxPrune.Location = new System.Drawing.Point(226, 23);
+            this.cbxPrune.Name = "cbxPrune";
+            this.cbxPrune.Size = new System.Drawing.Size(124, 17);
+            this.cbxPrune.TabIndex = 8;
+            this.cbxPrune.Text = "Leaderboard pruning";
+            this.cbxPrune.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -797,6 +809,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudArtsAndCrafts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudFaithAndWisdom)).EndInit();
             this.grpSolution.ResumeLayout(false);
+            this.grpSolution.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -849,6 +862,7 @@
         private System.Windows.Forms.ColumnHeader chOrganism;
         private System.Windows.Forms.ToolTip toolTipError;
         private System.Windows.Forms.Button btnRetryWithBest;
+        private System.Windows.Forms.CheckBox cbxPrune;
     }
 }
 

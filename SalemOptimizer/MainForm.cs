@@ -150,6 +150,8 @@ namespace SalemOptimizer
 
                 UseWaitCursor = true;
 
+                var prune = cbxPrune.Checked;
+
                 var problem =
                     new Problem()
                     .Add(ProficiencyKind.ArtsAndCrafts, nudArtsAndCrafts.Value)
@@ -172,29 +174,25 @@ namespace SalemOptimizer
 
                 cancellationTokenSource = new CancellationTokenSource();
 
-                var solvers = Enumerable.Range(1, 4).Select(i => Task.Run(() => new Solver(problem, availableInspirationals, cancellationTokenSource.Token, useLastBest ? bestOrganisms : null).Solve())).ToArray();
+                var solvers = Enumerable.Range(1, 4).Select(i => Task.Run(() => new Solver(problem, availableInspirationals, cancellationTokenSource.Token, useLastBest ? bestOrganisms : null).Solve(prune))).ToArray();
 
                 var best = await Task.WhenAll(solvers);
 
                 // Aggregate the best results and fill them into the results control
-                var bestOfAll =
-                    best
-                    .SelectMany(i => i)
-                    .Select(i => new { Name = i.ToString(), Organism = i, Solution = i.Solution })
-                    .GroupBy(i => i.Name)
-                    .Select(i => i.First())
-                    .OrderBy(i => i.Solution.CostTotal)
-                    .Take(5)
-                    .ToArray();
+                var leaderboard = new Leaderboard(5, prune);
 
-                bestOrganisms = bestOfAll.Select(i => i.Organism.Clone()).ToArray();
+                foreach (var organism in best.SelectMany(i => i)) leaderboard.AddOrganism(organism);
+
+                var bestOfAll = leaderboard.GetBest();
+
+                bestOrganisms = bestOfAll.Select(i => i.Clone()).ToArray();
 
                 lvSolutions.Items.Clear();
 
                 foreach (var organism in bestOfAll)
                 {
                     var lvi = new ListViewItem();
-                    lvi.Text = organism.Name;
+                    lvi.Text = organism.ToString();
                     lvi.ForeColor = organism.Solution.IncompletenessPenalty == 0 ? Color.Green : Color.Red;
                     lvi.SubItems.Add(organism.Solution.CostTotal.ToString("###,###,###"));
                     lvSolutions.Items.Add(lvi);

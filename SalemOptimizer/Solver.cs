@@ -24,9 +24,9 @@ namespace SalemOptimizer
 
         public Inspirational[] AvailableInspirationals { get { return availableInspirationals; } }
 
-        public Organism[] Solve()
+        public Organism[] Solve(bool prune)
         {
-            var leaderboard = new Leaderboard(5);
+            var leaderboard = new Leaderboard(5, prune);
 
             var organisms = new List<Organism>();
             var generations = 0;

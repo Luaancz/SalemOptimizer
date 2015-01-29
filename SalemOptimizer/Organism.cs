@@ -11,6 +11,7 @@ namespace SalemOptimizer
         private Problem problem;
 
         public SolutionInformation Solution = new SolutionInformation { CostTotal = int.MaxValue };
+        private EvaluationState lastEvaluation;
 
         public Organism(Solver solver, Problem problem)
         {
@@ -18,28 +19,35 @@ namespace SalemOptimizer
             this.problem = problem;
 
             root = new InspirationalBranch(solver) { LeftNode = new InspirationalBranch(solver), RightNode = new InspirationalBranch(solver) };
-            Solution = Evaluate(root, problem);
+            lastEvaluation = new EvaluationState();
+            Solution = Evaluate(root, lastEvaluation, problem);
         }
         
+        public bool IsSupersetOf(Organism organism)
+        {
+            if (lastEvaluation == null || organism.lastEvaluation == null) return false;
+
+            return lastEvaluation.IsSupersetOf(organism.lastEvaluation);
+        }
+
         public override string ToString()
         {
             return root.GetNames();
         }
 
-        public static SolutionInformation Evaluate(InspirationalBranch root, Problem problem)
+        private static SolutionInformation Evaluate(InspirationalBranch root, EvaluationState state, Problem problem)
         {
-            EvaluationState engine = new EvaluationState();
-            root.Evaluate(engine);
+            root.Evaluate(state);
 
             var cost = new SolutionInformation();
 
             // Add the total inspiration cost
-            cost.InspirationTotal += engine.Inspiration;
+            cost.InspirationTotal += state.Inspiration;
 
             // Add extra cost for incomplete solutions
             foreach (var needed in problem.Proficiencies)
             {
-                cost.IncompletenessPenalty += Math.Max(0d, needed.Value - engine.GetValue(needed.Key)) * 1000;
+                cost.IncompletenessPenalty += Math.Max(0d, needed.Value - state.GetValue(needed.Key)) * 1000;
             }
 
             cost.CostTotal = cost.InspirationTotal + cost.IncompletenessPenalty;
@@ -54,16 +62,21 @@ namespace SalemOptimizer
             clone = (InspirationalBranch)root.Clone();
             clone.Mutate();
             
-            var engineNew = new EvaluationState();
-            var engineOld = new EvaluationState();
+            var stateNew = new EvaluationState();
+            var stateOld = new EvaluationState();
 
-            var newResult = Evaluate(clone, problem);
-            var oldResult = Evaluate(root, problem);
+            var newResult = Evaluate(clone, stateNew, problem);
+            var oldResult = Evaluate(root, stateOld, problem);
 
             if (newResult.CostTotal < oldResult.CostTotal || Helper.Mutate(10))
             {
                 root = clone;
                 Solution = newResult;
+                lastEvaluation = stateNew;
+            }
+            else 
+            {
+                lastEvaluation = stateOld;
             }
         }
 
@@ -72,6 +85,7 @@ namespace SalemOptimizer
             Organism clone = new Organism(solver, problem);
             clone.root = this.root.Clone();
             clone.Solution = this.Solution;
+            clone.lastEvaluation = lastEvaluation;
             return clone;
         }
 
@@ -83,7 +97,9 @@ namespace SalemOptimizer
             motherDna.LeftNode = fatherDna.LeftNode;
             motherDna.RightNode = fatherDna.RightNode;
 
-            child.Solution = Evaluate(child.root, problem);
+            var state = new EvaluationState();
+            child.Solution = Evaluate(child.root, state, problem);
+            child.lastEvaluation = state;
             return child;
         }
 
