@@ -64,6 +64,12 @@
     <Compile Include="ProficiencyKind.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SolutionDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SolutionDetailForm.Designer.cs">
+      <DependentUpon>SolutionDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SolutionInformation.cs" />
     <Compile Include="Solver.cs" />
     <Compile Include="Helper.cs" />
@@ -82,6 +88,9 @@
     <Content Include="Inspirationals.tab">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="SolutionDetailForm.resx">
+      <DependentUpon>SolutionDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -192,6 +192,7 @@ namespace SalemOptimizer
                 foreach (var organism in bestOfAll)
                 {
                     var lvi = new ListViewItem();
+                    lvi.Tag = organism;
                     lvi.Text = organism.ToString();
                     lvi.ForeColor = organism.Solution.IncompletenessPenalty == 0 ? Color.Green : Color.Red;
                     lvi.SubItems.Add(organism.Solution.CostTotal.ToString("###,###,###"));
@@ -284,6 +285,13 @@ namespace SalemOptimizer
             }
 
             await FindSolution(true);
+        }
+
+        private void lvSolutions_ItemActivate(object sender, EventArgs e)
+        {
+            if (lvSolutions.SelectedItems.Count == 0) return;
+
+            SolutionDetailForm.ShowDetail((Organism)lvSolutions.SelectedItems[0].Tag);
         }
     }
 }
