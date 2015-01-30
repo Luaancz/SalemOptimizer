@@ -56,5 +56,8 @@
     <Setting Name="MainFormClientSize" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">664, 462</Value>
     </Setting>
+    <Setting Name="LeaderboardPruning" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

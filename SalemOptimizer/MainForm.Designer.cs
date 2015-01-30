@@ -36,19 +36,6 @@
             this.lblInspirationals = new System.Windows.Forms.Label();
             this.grpDesiredProficiencies = new System.Windows.Forms.GroupBox();
             this.tlpProficiencies = new System.Windows.Forms.TableLayoutPanel();
-            this.nudPerenialPhilosophy = new System.Windows.Forms.NumericUpDown();
-            this.nudNaturalPhilosophy = new System.Windows.Forms.NumericUpDown();
-            this.nudThreadAndNeedle = new System.Windows.Forms.NumericUpDown();
-            this.nudSugarAndSpice = new System.Windows.Forms.NumericUpDown();
-            this.nudStocksAndCultivars = new System.Windows.Forms.NumericUpDown();
-            this.nudSparksAndEmbers = new System.Windows.Forms.NumericUpDown();
-            this.nudHerbsAndSprouts = new System.Windows.Forms.NumericUpDown();
-            this.nudMinesAndMountains = new System.Windows.Forms.NumericUpDown();
-            this.nudLawAndLore = new System.Windows.Forms.NumericUpDown();
-            this.nudHuntingAndHideworking = new System.Windows.Forms.NumericUpDown();
-            this.nudHammerAndNail = new System.Windows.Forms.NumericUpDown();
-            this.nudFloraAndFauna = new System.Windows.Forms.NumericUpDown();
-            this.nudCloakAndDagger = new System.Windows.Forms.NumericUpDown();
             this.lblArtsAndCrafts = new System.Windows.Forms.Label();
             this.lblCloakAndDagger = new System.Windows.Forms.Label();
             this.lblFloraAndFauna = new System.Windows.Forms.Label();
@@ -64,9 +51,7 @@
             this.lblNaturalPhilosophy = new System.Windows.Forms.Label();
             this.lblPerenialPhilosophy = new System.Windows.Forms.Label();
             this.btnResetAll = new System.Windows.Forms.Button();
-            this.nudArtsAndCrafts = new System.Windows.Forms.NumericUpDown();
             this.lblFaithAndWisdom = new System.Windows.Forms.Label();
-            this.nudFaithAndWisdom = new System.Windows.Forms.NumericUpDown();
             this.btnStop = new System.Windows.Forms.Button();
             this.grpSolution = new System.Windows.Forms.GroupBox();
             this.btnRetryWithBest = new System.Windows.Forms.Button();
@@ -75,8 +60,24 @@
             this.chCost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolTipError = new System.Windows.Forms.ToolTip(this.components);
             this.cbxPrune = new System.Windows.Forms.CheckBox();
+            this.nudPerenialPhilosophy = new System.Windows.Forms.NumericUpDown();
+            this.nudNaturalPhilosophy = new System.Windows.Forms.NumericUpDown();
+            this.nudThreadAndNeedle = new System.Windows.Forms.NumericUpDown();
+            this.nudSugarAndSpice = new System.Windows.Forms.NumericUpDown();
+            this.nudStocksAndCultivars = new System.Windows.Forms.NumericUpDown();
+            this.nudSparksAndEmbers = new System.Windows.Forms.NumericUpDown();
+            this.nudHerbsAndSprouts = new System.Windows.Forms.NumericUpDown();
+            this.nudMinesAndMountains = new System.Windows.Forms.NumericUpDown();
+            this.nudLawAndLore = new System.Windows.Forms.NumericUpDown();
+            this.nudHuntingAndHideworking = new System.Windows.Forms.NumericUpDown();
+            this.nudHammerAndNail = new System.Windows.Forms.NumericUpDown();
+            this.nudFloraAndFauna = new System.Windows.Forms.NumericUpDown();
+            this.nudCloakAndDagger = new System.Windows.Forms.NumericUpDown();
+            this.nudArtsAndCrafts = new System.Windows.Forms.NumericUpDown();
+            this.nudFaithAndWisdom = new System.Windows.Forms.NumericUpDown();
             this.grpDesiredProficiencies.SuspendLayout();
             this.tlpProficiencies.SuspendLayout();
+            this.grpSolution.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPerenialPhilosophy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudNaturalPhilosophy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudThreadAndNeedle)).BeginInit();
@@ -92,7 +93,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudCloakAndDagger)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudArtsAndCrafts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudFaithAndWisdom)).BeginInit();
-            this.grpSolution.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnFindSolution
@@ -215,6 +215,254 @@
             this.tlpProficiencies.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpProficiencies.Size = new System.Drawing.Size(229, 419);
             this.tlpProficiencies.TabIndex = 0;
+            // 
+            // lblArtsAndCrafts
+            // 
+            this.lblArtsAndCrafts.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblArtsAndCrafts.AutoSize = true;
+            this.lblArtsAndCrafts.Location = new System.Drawing.Point(3, 6);
+            this.lblArtsAndCrafts.Name = "lblArtsAndCrafts";
+            this.lblArtsAndCrafts.Size = new System.Drawing.Size(76, 13);
+            this.lblArtsAndCrafts.TabIndex = 0;
+            this.lblArtsAndCrafts.Text = "Arts and Crafts";
+            // 
+            // lblCloakAndDagger
+            // 
+            this.lblCloakAndDagger.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblCloakAndDagger.AutoSize = true;
+            this.lblCloakAndDagger.Location = new System.Drawing.Point(3, 32);
+            this.lblCloakAndDagger.Name = "lblCloakAndDagger";
+            this.lblCloakAndDagger.Size = new System.Drawing.Size(91, 13);
+            this.lblCloakAndDagger.TabIndex = 1;
+            this.lblCloakAndDagger.Text = "Cloak and dagger";
+            // 
+            // lblFloraAndFauna
+            // 
+            this.lblFloraAndFauna.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblFloraAndFauna.AutoSize = true;
+            this.lblFloraAndFauna.Location = new System.Drawing.Point(3, 84);
+            this.lblFloraAndFauna.Name = "lblFloraAndFauna";
+            this.lblFloraAndFauna.Size = new System.Drawing.Size(84, 13);
+            this.lblFloraAndFauna.TabIndex = 3;
+            this.lblFloraAndFauna.Text = "Flora and Fauna";
+            // 
+            // lblHammerAndNail
+            // 
+            this.lblHammerAndNail.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblHammerAndNail.AutoSize = true;
+            this.lblHammerAndNail.Location = new System.Drawing.Point(3, 110);
+            this.lblHammerAndNail.Name = "lblHammerAndNail";
+            this.lblHammerAndNail.Size = new System.Drawing.Size(88, 13);
+            this.lblHammerAndNail.TabIndex = 4;
+            this.lblHammerAndNail.Text = "Hammer and Nail";
+            // 
+            // lblHuntingAndHideworking
+            // 
+            this.lblHuntingAndHideworking.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblHuntingAndHideworking.AutoSize = true;
+            this.lblHuntingAndHideworking.Location = new System.Drawing.Point(3, 136);
+            this.lblHuntingAndHideworking.Name = "lblHuntingAndHideworking";
+            this.lblHuntingAndHideworking.Size = new System.Drawing.Size(127, 13);
+            this.lblHuntingAndHideworking.TabIndex = 5;
+            this.lblHuntingAndHideworking.Text = "Hunting and Hideworking";
+            // 
+            // lblLawAndLore
+            // 
+            this.lblLawAndLore.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblLawAndLore.AutoSize = true;
+            this.lblLawAndLore.Location = new System.Drawing.Point(3, 162);
+            this.lblLawAndLore.Name = "lblLawAndLore";
+            this.lblLawAndLore.Size = new System.Drawing.Size(72, 13);
+            this.lblLawAndLore.TabIndex = 6;
+            this.lblLawAndLore.Text = "Law and Lore";
+            // 
+            // lblMinesAndMountains
+            // 
+            this.lblMinesAndMountains.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblMinesAndMountains.AutoSize = true;
+            this.lblMinesAndMountains.Location = new System.Drawing.Point(3, 188);
+            this.lblMinesAndMountains.Name = "lblMinesAndMountains";
+            this.lblMinesAndMountains.Size = new System.Drawing.Size(108, 13);
+            this.lblMinesAndMountains.TabIndex = 7;
+            this.lblMinesAndMountains.Text = "Mines and Mountains";
+            // 
+            // lblHerbsAndSprouts
+            // 
+            this.lblHerbsAndSprouts.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblHerbsAndSprouts.AutoSize = true;
+            this.lblHerbsAndSprouts.Location = new System.Drawing.Point(3, 214);
+            this.lblHerbsAndSprouts.Name = "lblHerbsAndSprouts";
+            this.lblHerbsAndSprouts.Size = new System.Drawing.Size(95, 13);
+            this.lblHerbsAndSprouts.TabIndex = 8;
+            this.lblHerbsAndSprouts.Text = "Herbs and Sprouts";
+            // 
+            // lblSparksAndEmbers
+            // 
+            this.lblSparksAndEmbers.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblSparksAndEmbers.AutoSize = true;
+            this.lblSparksAndEmbers.Location = new System.Drawing.Point(3, 240);
+            this.lblSparksAndEmbers.Name = "lblSparksAndEmbers";
+            this.lblSparksAndEmbers.Size = new System.Drawing.Size(99, 13);
+            this.lblSparksAndEmbers.TabIndex = 9;
+            this.lblSparksAndEmbers.Text = "Sparks and Embers";
+            // 
+            // lblStocksAndCultivars
+            // 
+            this.lblStocksAndCultivars.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblStocksAndCultivars.AutoSize = true;
+            this.lblStocksAndCultivars.Location = new System.Drawing.Point(3, 266);
+            this.lblStocksAndCultivars.Name = "lblStocksAndCultivars";
+            this.lblStocksAndCultivars.Size = new System.Drawing.Size(104, 13);
+            this.lblStocksAndCultivars.TabIndex = 10;
+            this.lblStocksAndCultivars.Text = "Stocks and Cultivars";
+            // 
+            // lblSugarAndSpice
+            // 
+            this.lblSugarAndSpice.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblSugarAndSpice.AutoSize = true;
+            this.lblSugarAndSpice.Location = new System.Drawing.Point(3, 292);
+            this.lblSugarAndSpice.Name = "lblSugarAndSpice";
+            this.lblSugarAndSpice.Size = new System.Drawing.Size(86, 13);
+            this.lblSugarAndSpice.TabIndex = 11;
+            this.lblSugarAndSpice.Text = "Sugar and Spice";
+            // 
+            // lblThreadAndNeedle
+            // 
+            this.lblThreadAndNeedle.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblThreadAndNeedle.AutoSize = true;
+            this.lblThreadAndNeedle.Location = new System.Drawing.Point(3, 318);
+            this.lblThreadAndNeedle.Name = "lblThreadAndNeedle";
+            this.lblThreadAndNeedle.Size = new System.Drawing.Size(99, 13);
+            this.lblThreadAndNeedle.TabIndex = 12;
+            this.lblThreadAndNeedle.Text = "Thread and Needle";
+            // 
+            // lblNaturalPhilosophy
+            // 
+            this.lblNaturalPhilosophy.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblNaturalPhilosophy.AutoSize = true;
+            this.lblNaturalPhilosophy.Location = new System.Drawing.Point(3, 344);
+            this.lblNaturalPhilosophy.Name = "lblNaturalPhilosophy";
+            this.lblNaturalPhilosophy.Size = new System.Drawing.Size(95, 13);
+            this.lblNaturalPhilosophy.TabIndex = 13;
+            this.lblNaturalPhilosophy.Text = "Natural Philosophy";
+            // 
+            // lblPerenialPhilosophy
+            // 
+            this.lblPerenialPhilosophy.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblPerenialPhilosophy.AutoSize = true;
+            this.lblPerenialPhilosophy.Location = new System.Drawing.Point(3, 370);
+            this.lblPerenialPhilosophy.Name = "lblPerenialPhilosophy";
+            this.lblPerenialPhilosophy.Size = new System.Drawing.Size(99, 13);
+            this.lblPerenialPhilosophy.TabIndex = 14;
+            this.lblPerenialPhilosophy.Text = "Perenial Philosophy";
+            // 
+            // btnResetAll
+            // 
+            this.btnResetAll.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnResetAll.Location = new System.Drawing.Point(143, 393);
+            this.btnResetAll.Name = "btnResetAll";
+            this.btnResetAll.Size = new System.Drawing.Size(83, 23);
+            this.btnResetAll.TabIndex = 15;
+            this.btnResetAll.Text = "Reset all";
+            this.btnResetAll.UseVisualStyleBackColor = true;
+            this.btnResetAll.Click += new System.EventHandler(this.btnResetAll_Click);
+            // 
+            // lblFaithAndWisdom
+            // 
+            this.lblFaithAndWisdom.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblFaithAndWisdom.AutoSize = true;
+            this.lblFaithAndWisdom.Location = new System.Drawing.Point(3, 58);
+            this.lblFaithAndWisdom.Name = "lblFaithAndWisdom";
+            this.lblFaithAndWisdom.Size = new System.Drawing.Size(92, 13);
+            this.lblFaithAndWisdom.TabIndex = 2;
+            this.lblFaithAndWisdom.Text = "Faith and Wisdom";
+            // 
+            // btnStop
+            // 
+            this.btnStop.Enabled = false;
+            this.btnStop.Location = new System.Drawing.Point(68, 19);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(59, 23);
+            this.btnStop.TabIndex = 5;
+            this.btnStop.Text = "Stop";
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
+            // grpSolution
+            // 
+            this.grpSolution.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpSolution.Controls.Add(this.cbxPrune);
+            this.grpSolution.Controls.Add(this.btnRetryWithBest);
+            this.grpSolution.Controls.Add(this.lvSolutions);
+            this.grpSolution.Controls.Add(this.btnFindSolution);
+            this.grpSolution.Controls.Add(this.btnStop);
+            this.grpSolution.Location = new System.Drawing.Point(12, 242);
+            this.grpSolution.Name = "grpSolution";
+            this.grpSolution.Size = new System.Drawing.Size(399, 208);
+            this.grpSolution.TabIndex = 6;
+            this.grpSolution.TabStop = false;
+            this.grpSolution.Text = "Solution";
+            // 
+            // btnRetryWithBest
+            // 
+            this.btnRetryWithBest.Enabled = false;
+            this.btnRetryWithBest.Location = new System.Drawing.Point(133, 19);
+            this.btnRetryWithBest.Name = "btnRetryWithBest";
+            this.btnRetryWithBest.Size = new System.Drawing.Size(87, 23);
+            this.btnRetryWithBest.TabIndex = 7;
+            this.btnRetryWithBest.Text = "Retry with best";
+            this.btnRetryWithBest.UseVisualStyleBackColor = true;
+            this.btnRetryWithBest.Click += new System.EventHandler(this.btnRetryWithBest_Click);
+            // 
+            // lvSolutions
+            // 
+            this.lvSolutions.Activation = System.Windows.Forms.ItemActivation.TwoClick;
+            this.lvSolutions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lvSolutions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chOrganism,
+            this.chCost});
+            this.lvSolutions.Location = new System.Drawing.Point(6, 48);
+            this.lvSolutions.Name = "lvSolutions";
+            this.lvSolutions.Size = new System.Drawing.Size(387, 154);
+            this.lvSolutions.TabIndex = 6;
+            this.lvSolutions.UseCompatibleStateImageBehavior = false;
+            this.lvSolutions.View = System.Windows.Forms.View.Details;
+            this.lvSolutions.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView_ColumnClick);
+            this.lvSolutions.ItemActivate += new System.EventHandler(this.lvSolutions_ItemActivate);
+            // 
+            // chOrganism
+            // 
+            this.chOrganism.Text = "Organism";
+            this.chOrganism.Width = 205;
+            // 
+            // chCost
+            // 
+            this.chCost.Text = "Cost";
+            this.chCost.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // toolTipError
+            // 
+            this.toolTipError.AutomaticDelay = 100;
+            this.toolTipError.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.toolTipError.ForeColor = System.Drawing.Color.Black;
+            this.toolTipError.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Error;
+            this.toolTipError.ToolTipTitle = "Error";
+            // 
+            // cbxPrune
+            // 
+            this.cbxPrune.AutoSize = true;
+            this.cbxPrune.Checked = global::SalemOptimizer.Properties.Settings.Default.LeaderboardPruning;
+            this.cbxPrune.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::SalemOptimizer.Properties.Settings.Default, "LeaderboardPruning", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cbxPrune.Location = new System.Drawing.Point(226, 23);
+            this.cbxPrune.Name = "cbxPrune";
+            this.cbxPrune.Size = new System.Drawing.Size(124, 17);
+            this.cbxPrune.TabIndex = 8;
+            this.cbxPrune.Text = "Leaderboard pruning";
+            this.cbxPrune.UseVisualStyleBackColor = true;
             // 
             // nudPerenialPhilosophy
             // 
@@ -489,158 +737,6 @@
             this.nudCloakAndDagger.ThousandsSeparator = true;
             this.nudCloakAndDagger.Value = global::SalemOptimizer.Properties.Settings.Default.CloakAndDagger;
             // 
-            // lblArtsAndCrafts
-            // 
-            this.lblArtsAndCrafts.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblArtsAndCrafts.AutoSize = true;
-            this.lblArtsAndCrafts.Location = new System.Drawing.Point(3, 6);
-            this.lblArtsAndCrafts.Name = "lblArtsAndCrafts";
-            this.lblArtsAndCrafts.Size = new System.Drawing.Size(76, 13);
-            this.lblArtsAndCrafts.TabIndex = 0;
-            this.lblArtsAndCrafts.Text = "Arts and Crafts";
-            // 
-            // lblCloakAndDagger
-            // 
-            this.lblCloakAndDagger.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblCloakAndDagger.AutoSize = true;
-            this.lblCloakAndDagger.Location = new System.Drawing.Point(3, 32);
-            this.lblCloakAndDagger.Name = "lblCloakAndDagger";
-            this.lblCloakAndDagger.Size = new System.Drawing.Size(91, 13);
-            this.lblCloakAndDagger.TabIndex = 1;
-            this.lblCloakAndDagger.Text = "Cloak and dagger";
-            // 
-            // lblFloraAndFauna
-            // 
-            this.lblFloraAndFauna.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblFloraAndFauna.AutoSize = true;
-            this.lblFloraAndFauna.Location = new System.Drawing.Point(3, 84);
-            this.lblFloraAndFauna.Name = "lblFloraAndFauna";
-            this.lblFloraAndFauna.Size = new System.Drawing.Size(84, 13);
-            this.lblFloraAndFauna.TabIndex = 3;
-            this.lblFloraAndFauna.Text = "Flora and Fauna";
-            // 
-            // lblHammerAndNail
-            // 
-            this.lblHammerAndNail.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblHammerAndNail.AutoSize = true;
-            this.lblHammerAndNail.Location = new System.Drawing.Point(3, 110);
-            this.lblHammerAndNail.Name = "lblHammerAndNail";
-            this.lblHammerAndNail.Size = new System.Drawing.Size(88, 13);
-            this.lblHammerAndNail.TabIndex = 4;
-            this.lblHammerAndNail.Text = "Hammer and Nail";
-            // 
-            // lblHuntingAndHideworking
-            // 
-            this.lblHuntingAndHideworking.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblHuntingAndHideworking.AutoSize = true;
-            this.lblHuntingAndHideworking.Location = new System.Drawing.Point(3, 136);
-            this.lblHuntingAndHideworking.Name = "lblHuntingAndHideworking";
-            this.lblHuntingAndHideworking.Size = new System.Drawing.Size(127, 13);
-            this.lblHuntingAndHideworking.TabIndex = 5;
-            this.lblHuntingAndHideworking.Text = "Hunting and Hideworking";
-            // 
-            // lblLawAndLore
-            // 
-            this.lblLawAndLore.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblLawAndLore.AutoSize = true;
-            this.lblLawAndLore.Location = new System.Drawing.Point(3, 162);
-            this.lblLawAndLore.Name = "lblLawAndLore";
-            this.lblLawAndLore.Size = new System.Drawing.Size(72, 13);
-            this.lblLawAndLore.TabIndex = 6;
-            this.lblLawAndLore.Text = "Law and Lore";
-            // 
-            // lblMinesAndMountains
-            // 
-            this.lblMinesAndMountains.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblMinesAndMountains.AutoSize = true;
-            this.lblMinesAndMountains.Location = new System.Drawing.Point(3, 188);
-            this.lblMinesAndMountains.Name = "lblMinesAndMountains";
-            this.lblMinesAndMountains.Size = new System.Drawing.Size(108, 13);
-            this.lblMinesAndMountains.TabIndex = 7;
-            this.lblMinesAndMountains.Text = "Mines and Mountains";
-            // 
-            // lblHerbsAndSprouts
-            // 
-            this.lblHerbsAndSprouts.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblHerbsAndSprouts.AutoSize = true;
-            this.lblHerbsAndSprouts.Location = new System.Drawing.Point(3, 214);
-            this.lblHerbsAndSprouts.Name = "lblHerbsAndSprouts";
-            this.lblHerbsAndSprouts.Size = new System.Drawing.Size(95, 13);
-            this.lblHerbsAndSprouts.TabIndex = 8;
-            this.lblHerbsAndSprouts.Text = "Herbs and Sprouts";
-            // 
-            // lblSparksAndEmbers
-            // 
-            this.lblSparksAndEmbers.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblSparksAndEmbers.AutoSize = true;
-            this.lblSparksAndEmbers.Location = new System.Drawing.Point(3, 240);
-            this.lblSparksAndEmbers.Name = "lblSparksAndEmbers";
-            this.lblSparksAndEmbers.Size = new System.Drawing.Size(99, 13);
-            this.lblSparksAndEmbers.TabIndex = 9;
-            this.lblSparksAndEmbers.Text = "Sparks and Embers";
-            // 
-            // lblStocksAndCultivars
-            // 
-            this.lblStocksAndCultivars.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblStocksAndCultivars.AutoSize = true;
-            this.lblStocksAndCultivars.Location = new System.Drawing.Point(3, 266);
-            this.lblStocksAndCultivars.Name = "lblStocksAndCultivars";
-            this.lblStocksAndCultivars.Size = new System.Drawing.Size(104, 13);
-            this.lblStocksAndCultivars.TabIndex = 10;
-            this.lblStocksAndCultivars.Text = "Stocks and Cultivars";
-            // 
-            // lblSugarAndSpice
-            // 
-            this.lblSugarAndSpice.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblSugarAndSpice.AutoSize = true;
-            this.lblSugarAndSpice.Location = new System.Drawing.Point(3, 292);
-            this.lblSugarAndSpice.Name = "lblSugarAndSpice";
-            this.lblSugarAndSpice.Size = new System.Drawing.Size(86, 13);
-            this.lblSugarAndSpice.TabIndex = 11;
-            this.lblSugarAndSpice.Text = "Sugar and Spice";
-            // 
-            // lblThreadAndNeedle
-            // 
-            this.lblThreadAndNeedle.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblThreadAndNeedle.AutoSize = true;
-            this.lblThreadAndNeedle.Location = new System.Drawing.Point(3, 318);
-            this.lblThreadAndNeedle.Name = "lblThreadAndNeedle";
-            this.lblThreadAndNeedle.Size = new System.Drawing.Size(99, 13);
-            this.lblThreadAndNeedle.TabIndex = 12;
-            this.lblThreadAndNeedle.Text = "Thread and Needle";
-            // 
-            // lblNaturalPhilosophy
-            // 
-            this.lblNaturalPhilosophy.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblNaturalPhilosophy.AutoSize = true;
-            this.lblNaturalPhilosophy.Location = new System.Drawing.Point(3, 344);
-            this.lblNaturalPhilosophy.Name = "lblNaturalPhilosophy";
-            this.lblNaturalPhilosophy.Size = new System.Drawing.Size(95, 13);
-            this.lblNaturalPhilosophy.TabIndex = 13;
-            this.lblNaturalPhilosophy.Text = "Natural Philosophy";
-            // 
-            // lblPerenialPhilosophy
-            // 
-            this.lblPerenialPhilosophy.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblPerenialPhilosophy.AutoSize = true;
-            this.lblPerenialPhilosophy.Location = new System.Drawing.Point(3, 370);
-            this.lblPerenialPhilosophy.Name = "lblPerenialPhilosophy";
-            this.lblPerenialPhilosophy.Size = new System.Drawing.Size(99, 13);
-            this.lblPerenialPhilosophy.TabIndex = 14;
-            this.lblPerenialPhilosophy.Text = "Perenial Philosophy";
-            // 
-            // btnResetAll
-            // 
-            this.btnResetAll.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnResetAll.Location = new System.Drawing.Point(143, 393);
-            this.btnResetAll.Name = "btnResetAll";
-            this.btnResetAll.Size = new System.Drawing.Size(83, 23);
-            this.btnResetAll.TabIndex = 15;
-            this.btnResetAll.Text = "Reset all";
-            this.btnResetAll.UseVisualStyleBackColor = true;
-            this.btnResetAll.Click += new System.EventHandler(this.btnResetAll_Click);
-            // 
             // nudArtsAndCrafts
             // 
             this.nudArtsAndCrafts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -661,16 +757,6 @@
             this.nudArtsAndCrafts.TabIndex = 16;
             this.nudArtsAndCrafts.ThousandsSeparator = true;
             this.nudArtsAndCrafts.Value = global::SalemOptimizer.Properties.Settings.Default.ArtsAndCrafts;
-            // 
-            // lblFaithAndWisdom
-            // 
-            this.lblFaithAndWisdom.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblFaithAndWisdom.AutoSize = true;
-            this.lblFaithAndWisdom.Location = new System.Drawing.Point(3, 58);
-            this.lblFaithAndWisdom.Name = "lblFaithAndWisdom";
-            this.lblFaithAndWisdom.Size = new System.Drawing.Size(92, 13);
-            this.lblFaithAndWisdom.TabIndex = 2;
-            this.lblFaithAndWisdom.Text = "Faith and Wisdom";
             // 
             // nudFaithAndWisdom
             // 
@@ -693,89 +779,6 @@
             this.nudFaithAndWisdom.ThousandsSeparator = true;
             this.nudFaithAndWisdom.Value = global::SalemOptimizer.Properties.Settings.Default.FaithAndWisdom;
             // 
-            // btnStop
-            // 
-            this.btnStop.Enabled = false;
-            this.btnStop.Location = new System.Drawing.Point(68, 19);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(59, 23);
-            this.btnStop.TabIndex = 5;
-            this.btnStop.Text = "Stop";
-            this.btnStop.UseVisualStyleBackColor = true;
-            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
-            // 
-            // grpSolution
-            // 
-            this.grpSolution.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpSolution.Controls.Add(this.cbxPrune);
-            this.grpSolution.Controls.Add(this.btnRetryWithBest);
-            this.grpSolution.Controls.Add(this.lvSolutions);
-            this.grpSolution.Controls.Add(this.btnFindSolution);
-            this.grpSolution.Controls.Add(this.btnStop);
-            this.grpSolution.Location = new System.Drawing.Point(12, 242);
-            this.grpSolution.Name = "grpSolution";
-            this.grpSolution.Size = new System.Drawing.Size(399, 208);
-            this.grpSolution.TabIndex = 6;
-            this.grpSolution.TabStop = false;
-            this.grpSolution.Text = "Solution";
-            // 
-            // btnRetryWithBest
-            // 
-            this.btnRetryWithBest.Enabled = false;
-            this.btnRetryWithBest.Location = new System.Drawing.Point(133, 19);
-            this.btnRetryWithBest.Name = "btnRetryWithBest";
-            this.btnRetryWithBest.Size = new System.Drawing.Size(87, 23);
-            this.btnRetryWithBest.TabIndex = 7;
-            this.btnRetryWithBest.Text = "Retry with best";
-            this.btnRetryWithBest.UseVisualStyleBackColor = true;
-            this.btnRetryWithBest.Click += new System.EventHandler(this.btnRetryWithBest_Click);
-            // 
-            // lvSolutions
-            // 
-            this.lvSolutions.Activation = System.Windows.Forms.ItemActivation.TwoClick;
-            this.lvSolutions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lvSolutions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chOrganism,
-            this.chCost});
-            this.lvSolutions.Location = new System.Drawing.Point(6, 48);
-            this.lvSolutions.Name = "lvSolutions";
-            this.lvSolutions.Size = new System.Drawing.Size(387, 154);
-            this.lvSolutions.TabIndex = 6;
-            this.lvSolutions.UseCompatibleStateImageBehavior = false;
-            this.lvSolutions.View = System.Windows.Forms.View.Details;
-            this.lvSolutions.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView_ColumnClick);
-            // 
-            // chOrganism
-            // 
-            this.chOrganism.Text = "Organism";
-            this.chOrganism.Width = 205;
-            // 
-            // chCost
-            // 
-            this.chCost.Text = "Cost";
-            this.chCost.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // toolTipError
-            // 
-            this.toolTipError.AutomaticDelay = 100;
-            this.toolTipError.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.toolTipError.ForeColor = System.Drawing.Color.Black;
-            this.toolTipError.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Error;
-            this.toolTipError.ToolTipTitle = "Error";
-            // 
-            // cbxPrune
-            // 
-            this.cbxPrune.AutoSize = true;
-            this.cbxPrune.Location = new System.Drawing.Point(226, 23);
-            this.cbxPrune.Name = "cbxPrune";
-            this.cbxPrune.Size = new System.Drawing.Size(124, 17);
-            this.cbxPrune.TabIndex = 8;
-            this.cbxPrune.Text = "Leaderboard pruning";
-            this.cbxPrune.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -793,6 +796,8 @@
             this.grpDesiredProficiencies.ResumeLayout(false);
             this.tlpProficiencies.ResumeLayout(false);
             this.tlpProficiencies.PerformLayout();
+            this.grpSolution.ResumeLayout(false);
+            this.grpSolution.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPerenialPhilosophy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudNaturalPhilosophy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudThreadAndNeedle)).EndInit();
@@ -808,8 +813,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudCloakAndDagger)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudArtsAndCrafts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudFaithAndWisdom)).EndInit();
-            this.grpSolution.ResumeLayout(false);
-            this.grpSolution.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

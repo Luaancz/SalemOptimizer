@@ -254,5 +254,17 @@ namespace SalemOptimizer.Properties {
                 this["MainFormClientSize"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool LeaderboardPruning {
+            get {
+                return ((bool)(this["LeaderboardPruning"]));
+            }
+            set {
+                this["LeaderboardPruning"] = value;
+            }
+        }
     }
 }
