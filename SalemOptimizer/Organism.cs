@@ -71,7 +71,6 @@ namespace SalemOptimizer
             clone.Mutate();
             
             var stateNew = new EvaluationState();
-            var stateOld = new EvaluationState();
 
             var newResult = Evaluate(clone, stateNew, problem);
 

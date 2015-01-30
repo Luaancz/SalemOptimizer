@@ -86,6 +86,7 @@ namespace SalemOptimizer
         public InspirationalBranch Clone()
         {
             InspirationalBranch clone = new InspirationalBranch(solver);
+            clone.Inspirational = Inspirational;
 
             if (LeftNode != null) clone.LeftNode = LeftNode.Clone();
             if (RightNode != null) clone.RightNode = RightNode.Clone();

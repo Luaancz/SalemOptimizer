@@ -38,7 +38,14 @@ namespace SalemOptimizer
                 leaderboard.AddOrganism(organism);
             }
 
-            if (includedOrganisms != null) organisms.AddRange(includedOrganisms.Select(i => i.Clone()));
+            if (includedOrganisms != null)
+            {
+                foreach (var organism in includedOrganisms.Select(i => i.Clone()))
+                {
+                    organisms.Add(organism);
+                    leaderboard.AddOrganism(organism);
+                }
+            }
 
             var best = default(Organism);
             var worst = default(Organism);
