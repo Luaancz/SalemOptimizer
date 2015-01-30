@@ -23,18 +23,18 @@ namespace SalemOptimizer
 					(
 						(cols, index) =>
 							new Inspirational
-							{
-								Name = cols[0],
-								Proficiencies =
-									cols
-										.Select((val, idx) => new { Index = idx, Value = val })
-										.Where(i => i.Index >= 2 && i.Index <= 16 && !string.IsNullOrWhiteSpace(i.Value))
-										.ToDictionary(i => (ProficiencyKind)(i.Index - 2), i => int.Parse(i.Value)),
-								Uses = int.Parse(cols[18]),
-								Weight = string.IsNullOrWhiteSpace(cols[1]) ? 1d : double.Parse(cols[1], CultureInfo.InvariantCulture)
-							}
+                            (
+								cols[0],
+                                int.Parse(cols[18]),
+								cols
+									.Select((val, idx) => new { Index = idx, Value = val })
+									.Where(i => i.Index >= 2 && i.Index <= 16)
+                                    .OrderBy(i => i.Index)
+                                    .Select(i => string.IsNullOrWhiteSpace(i.Value) ? 0 : int.Parse(i.Value))
+                                    .ToArray()
+							)
 					)
-					.Where(i => i.Proficiencies.Count > 0)
+					.Where(i => i.Proficiencies.Length > 0)
 					.Select((inspirational, index) => { inspirational.Id = index; return inspirational; })
 					.ToList();
         }

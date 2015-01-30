@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -170,7 +171,7 @@ namespace SalemOptimizer
                     .Add(ProficiencyKind.SugarAndSpice, nudSugarAndSpice.Value)
                     .Add(ProficiencyKind.ThreadAndNeedle, nudThreadAndNeedle.Value);
 
-                var availableInspirationals = lvInspirationals.CheckedItems.OfType<ListViewItem>().Select(i => ((Inspirational)i.Tag).Clone()).ToArray();
+                var availableInspirationals = lvInspirationals.CheckedItems.OfType<ListViewItem>().Select(i => ((Inspirational)i.Tag)).ToArray();
 
                 cancellationTokenSource = new CancellationTokenSource();
 

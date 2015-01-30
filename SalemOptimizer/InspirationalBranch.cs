@@ -32,13 +32,13 @@ namespace SalemOptimizer
             return Inspirational.Name;
         }
 
-        public string GetNames()
+        public IEnumerable<string> GetNames()
         {
             var nodes = new List<InspirationalBranch>();
 
             TraverseNode(this, nodes);
 
-            return string.Join(", ", nodes.GroupBy(i => i.Inspirational.Name).OrderBy(i => i.Key).Select(i => i.Count().ToString() + "x " + i.Key));
+            return nodes.GroupBy(i => i.Inspirational.Name).OrderBy(i => i.Key).Select(i => i.Count().ToString() + "x " + i.Key);
         }
         
         public void Mutate()
@@ -86,7 +86,6 @@ namespace SalemOptimizer
         public InspirationalBranch Clone()
         {
             InspirationalBranch clone = new InspirationalBranch(solver);
-            clone.Inspirational = Inspirational.Clone();
 
             if (LeftNode != null) clone.LeftNode = LeftNode.Clone();
             if (RightNode != null) clone.RightNode = RightNode.Clone();

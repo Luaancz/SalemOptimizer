@@ -8,6 +8,14 @@ namespace SalemOptimizer
 {
     public class Inspirational
     {
+        public Inspirational(string name, int uses, int[] proficiencies)
+        {
+            this.Name = name;
+            this.Uses = uses;
+            this.Proficiencies = proficiencies;
+            this.Inspiration = proficiencies.Sum();
+        }
+
         public int Id { get; set; }
 
         public string Name { get; set; }
@@ -17,21 +25,8 @@ namespace SalemOptimizer
 
         public double Weight { get; set; }
 
-        public Dictionary<ProficiencyKind, int> Proficiencies { get; set; }
+        public int[] Proficiencies;
 
-        public int Inspiration { get { return Proficiencies.Sum(i => i.Value); } }
-
-        public Inspirational Clone()
-        {
-            var clone = new Inspirational();
-
-            clone.Id = Id;
-            clone.Name = Name;
-            clone.Weight = Weight;
-
-            clone.Proficiencies = Proficiencies.ToDictionary(i => i.Key, i => i.Value);
-
-            return clone;
-        }
+        public int Inspiration { get; private set; }
     }
 }

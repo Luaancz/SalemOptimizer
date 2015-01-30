@@ -30,7 +30,15 @@ namespace SalemOptimizer
             return lastEvaluation.IsSupersetOf(organism.lastEvaluation);
         }
 
+        private string cachedNames;
         public override string ToString()
+        {
+            if (cachedNames != null) return cachedNames;
+
+            return cachedNames = string.Join(", ", root.GetNames());
+        }
+
+        public IEnumerable<string> GetNames()
         {
             return root.GetNames();
         }
@@ -66,17 +74,14 @@ namespace SalemOptimizer
             var stateOld = new EvaluationState();
 
             var newResult = Evaluate(clone, stateNew, problem);
-            var oldResult = Evaluate(root, stateOld, problem);
 
-            if (newResult.CostTotal < oldResult.CostTotal || Helper.Mutate(10))
+            if (newResult.CostTotal < Solution.CostTotal || Helper.Mutate(10))
             {
                 root = clone;
                 Solution = newResult;
                 lastEvaluation = stateNew;
-            }
-            else 
-            {
-                lastEvaluation = stateOld;
+
+                cachedNames = null;
             }
         }
 
@@ -86,6 +91,7 @@ namespace SalemOptimizer
             clone.root = this.root.Clone();
             clone.Solution = this.Solution;
             clone.lastEvaluation = lastEvaluation;
+            clone.cachedNames = cachedNames;
             return clone;
         }
 
@@ -100,6 +106,7 @@ namespace SalemOptimizer
             var state = new EvaluationState();
             child.Solution = Evaluate(child.root, state, problem);
             child.lastEvaluation = state;
+            child.cachedNames = null;
             return child;
         }
 

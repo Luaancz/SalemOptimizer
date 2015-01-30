@@ -9,9 +9,9 @@ namespace SalemOptimizer
         private int[] proficiencies = new int[15];
         private int[] inspirationalUses = new int[InspirationalDatabase.Inspirationals.Count];
 
-        public void AddProficiency(ProficiencyKind kind, int value, double weight)
+        void AddProficiency(int kind, int value, double weight)
         {
-            proficiencies[(int)kind] += value;
+            proficiencies[kind] += value;
 
             Inspiration += (int)(value * weight);
         }
@@ -19,10 +19,11 @@ namespace SalemOptimizer
         public void AddInspirational(Inspirational inspirational)
         {
             var uses = inspirationalUses[inspirational.Id]++;
+            var modifier = Math.Min(4d, 1d + uses * 0.5d);
 
-            foreach (var prof in inspirational.Proficiencies)
+            for (var i = 0; i < inspirational.Proficiencies.Length; i++)
             {
-                AddProficiency(prof.Key, prof.Value, Math.Min(4d, 1d + uses * 0.5d));
+                AddProficiency(i, inspirational.Proficiencies[i], modifier);
             }
         }
         
