@@ -14,13 +14,13 @@ namespace SalemOptimizer
         {
             this.solver = solver;
 
-            Inspirational = solver.AvailableInspirationals[Helper.GetInt(solver.AvailableInspirationals.Length)];
+            Inspirational = solver.AvailableInspirationals[solver.RandomHelper.GetShort(solver.AvailableInspirationals.Length)];
         }
 
         public InspirationalBranch CreateRandomNode()
         {
             var newNode = new InspirationalBranch(solver);
-            newNode.Inspirational = solver.AvailableInspirationals[Helper.GetInt(solver.AvailableInspirationals.Length)];
+            newNode.Inspirational = solver.AvailableInspirationals[solver.RandomHelper.GetShort(solver.AvailableInspirationals.Length)];
 
             return newNode;
         }
@@ -43,9 +43,9 @@ namespace SalemOptimizer
         
         public void Mutate()
         {
-            if (Helper.Mutate(100))
+            if (solver.RandomHelper.Mutate(100))
             {
-                Inspirational = solver.AvailableInspirationals[Helper.GetInt(solver.AvailableInspirationals.Length)];
+                Inspirational = solver.AvailableInspirationals[solver.RandomHelper.GetShort(solver.AvailableInspirationals.Length)];
             }
 
             if (LeftNode != null) LeftNode.Mutate();
@@ -53,22 +53,22 @@ namespace SalemOptimizer
 
             if (LeftNode == null)
             {
-                if (Helper.Mutate(20)) LeftNode = CreateRandomNode();
-                else if (Helper.Mutate(20)) LeftNode = this.Clone();
+                if (solver.RandomHelper.Mutate(20)) LeftNode = CreateRandomNode();
+                else if (solver.RandomHelper.Mutate(20)) LeftNode = this.Clone(solver);
             }
             else
             {
-                if (Helper.Mutate(50)) LeftNode = null;
+                if (solver.RandomHelper.Mutate(50)) LeftNode = null;
             }
 
             if (RightNode == null)
             {
-                if (Helper.Mutate(20)) RightNode = CreateRandomNode();
-                else if (Helper.Mutate(20)) RightNode = this.Clone();
+                if (solver.RandomHelper.Mutate(20)) RightNode = CreateRandomNode();
+                else if (solver.RandomHelper.Mutate(20)) RightNode = this.Clone(solver);
             }
             else
             {
-                if (Helper.Mutate(50)) RightNode = null;
+                if (solver.RandomHelper.Mutate(50)) RightNode = null;
             }
         }
         
@@ -83,13 +83,13 @@ namespace SalemOptimizer
             }
         }
 
-        public InspirationalBranch Clone()
+        public InspirationalBranch Clone(Solver solver)
         {
             InspirationalBranch clone = new InspirationalBranch(solver);
             clone.Inspirational = Inspirational;
 
-            if (LeftNode != null) clone.LeftNode = LeftNode.Clone();
-            if (RightNode != null) clone.RightNode = RightNode.Clone();
+            if (LeftNode != null) clone.LeftNode = LeftNode.Clone(solver);
+            if (RightNode != null) clone.RightNode = RightNode.Clone(solver);
 
             return clone;
         }
@@ -102,7 +102,7 @@ namespace SalemOptimizer
             var nodes = new List<InspirationalBranch>();
             TraverseNode(this, nodes);
 
-            var index = Helper.GetInt(nodes.Count);
+            var index = solver.RandomHelper.GetShort(nodes.Count);
             return nodes[index];
         }
 

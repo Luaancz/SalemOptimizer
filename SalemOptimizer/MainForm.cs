@@ -186,7 +186,7 @@ namespace SalemOptimizer
 
                 var bestOfAll = leaderboard.GetBest();
 
-                bestOrganisms = bestOfAll.Select(i => i.Clone()).ToArray();
+                bestOrganisms = bestOfAll.Select(i => i.Clone(null)).ToArray();
 
                 lvSolutions.Items.Clear();
 

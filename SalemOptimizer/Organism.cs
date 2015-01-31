@@ -67,14 +67,14 @@ namespace SalemOptimizer
         {
             InspirationalBranch clone = null;
 
-            clone = (InspirationalBranch)root.Clone();
+            clone = (InspirationalBranch)root.Clone(solver);
             clone.Mutate();
             
             var stateNew = new EvaluationState();
 
             var newResult = Evaluate(clone, stateNew, problem);
 
-            if (newResult.CostTotal < Solution.CostTotal || Helper.Mutate(10))
+            if (newResult.CostTotal < Solution.CostTotal || solver.RandomHelper.Mutate(10))
             {
                 root = clone;
                 Solution = newResult;
@@ -84,10 +84,10 @@ namespace SalemOptimizer
             }
         }
 
-        public Organism Clone()
+        public Organism Clone(Solver solver)
         {
-            Organism clone = new Organism(solver, problem);
-            clone.root = this.root.Clone();
+            Organism clone = new Organism(solver ?? this.solver, problem);
+            clone.root = this.root.Clone(solver ?? this.solver);
             clone.Solution = this.Solution;
             clone.lastEvaluation = lastEvaluation;
             clone.cachedNames = cachedNames;
@@ -96,8 +96,8 @@ namespace SalemOptimizer
 
         public Organism MakeCrossOver(Organism father)
         {
-            var child = this.Clone();
-            var fatherDna = father.GetRandomNode().Clone();
+            var child = this.Clone(solver);
+            var fatherDna = father.GetRandomNode().Clone(solver);
             var motherDna = child.GetRandomNode();
             motherDna.LeftNode = fatherDna.LeftNode;
             motherDna.RightNode = fatherDna.RightNode;

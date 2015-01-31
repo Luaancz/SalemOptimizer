@@ -13,6 +13,7 @@ namespace SalemOptimizer
         private readonly Inspirational[] availableInspirationals;
         private readonly CancellationToken cancellationToken;
         private readonly Organism[] includedOrganisms;
+        public readonly RandomHelper RandomHelper;
 
         public Solver(Problem problem, Inspirational[] availableInspirationals, CancellationToken cancellationToken, Organism[] includedOrganisms)
         {
@@ -20,6 +21,7 @@ namespace SalemOptimizer
             this.availableInspirationals = availableInspirationals;
             this.cancellationToken = cancellationToken;
             this.includedOrganisms = includedOrganisms;
+            this.RandomHelper = new RandomHelper();
         }
 
         public Inspirational[] AvailableInspirationals { get { return availableInspirationals; } }
@@ -40,7 +42,7 @@ namespace SalemOptimizer
 
             if (includedOrganisms != null)
             {
-                foreach (var organism in includedOrganisms.Select(i => i.Clone()))
+                foreach (var organism in includedOrganisms.Select(i => i.Clone(this)))
                 {
                     organisms.Add(organism);
                     leaderboard.AddOrganism(organism);
@@ -83,24 +85,25 @@ namespace SalemOptimizer
                     }
                 }
 
-                if (Helper.GetInt(10) == 1)
+                if (RandomHelper.GetShort(10) == 1)
                 {
                     organisms.Remove(worst);
-                    Organism clone = best.Clone();
+                    Organism clone = best.Clone(this);
                     organisms.Add(clone);
                 }
-                else if (Helper.GetInt(30) == 1)
-                {
-                    organisms.Remove(worst);
-                    int index = Helper.GetInt(organisms.Count);
-                    Organism clone = organisms[index].Clone();
-                    organisms.Add(clone);
-                }
-                else if (Helper.GetInt(100) == 1)
+                else if (RandomHelper.GetShort(30) == 1)
                 {
                     organisms.Remove(worst);
 
-                    int index = Helper.GetInt(organisms.Count);
+                    var index = RandomHelper.GetShort(organisms.Count);
+                    Organism clone = organisms[index].Clone(this);
+                    organisms.Add(clone);
+                }
+                else if (RandomHelper.GetShort(100) == 1)
+                {
+                    organisms.Remove(worst);
+
+                    int index = RandomHelper.GetShort(organisms.Count);
                     Organism mother = best;
                     Organism father = organisms[index];
 

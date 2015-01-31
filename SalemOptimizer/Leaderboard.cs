@@ -27,7 +27,7 @@ namespace SalemOptimizer
             {
                 var tmp =
                     organisms
-                    .Union(new[] { organism.Clone() })
+                    .Union(new[] { organism.Clone(null) })
                     .GroupBy(i => i == null ? null : i.ToString())
                     .Select(i => i.First());
 
